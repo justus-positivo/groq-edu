@@ -14,15 +14,15 @@ def icon(emoji: str):
     )
 
 
-icon("🏎️")
+icon("🥷")
 
-st.subheader("Groq Chat Streamlit App", divider="rainbow", anchor=False)
+st.subheader("GROQ.EDU Demo", divider="rainbow", anchor=False)
 
 client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
 )
 
-# Initialize chat history and selected model
+# Initialize chat history and selected model 2
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
