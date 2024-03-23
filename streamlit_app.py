@@ -2,8 +2,8 @@ import streamlit as st
 from typing import Generator
 from groq import Groq
 
-st.set_page_config(page_icon="💬", layout="wide",
-                   page_title="Groq Goes Brrrrrrrr...")
+st.set_page_config(page_icon="🥷", layout="wide",
+                   page_title="GROQ.EDU Demo")
 
 
 def icon(emoji: str):
@@ -57,7 +57,7 @@ max_tokens_range = models[model_option]["tokens"]
 with col2:
     # slider com tamanho máximo de tokens com base no modelo
     max_tokens = st.slider(
-        "Max Tokens:",
+        "Máximo de Tokens:",
         min_value=512, 
         max_value=max_tokens_range,
         # valor padrão
