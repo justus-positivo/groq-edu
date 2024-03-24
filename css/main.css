@@ -1,3 +1,11 @@
 header{
     display: none !important;
 }
+
+#MainMenu {
+    display: none !important;
+}
+
+footer {
+    display: none !important;
+}
