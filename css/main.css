@@ -3,6 +3,7 @@
 } */
 
 /* remover botões do github */
-header div:nth-of-type(2) :nth-of-type(1){
-    display: none !important;
+header div:nth-child(2) :nth-child(1){
+    /*display: none !important;*/
+    visibility: hidden !important;
 }
