@@ -4,13 +4,6 @@
 
 /* remover botões do github */
 header div:nth-child(2):nth-child(1){
-    display: none !important;
-}
-
-#MainMenu {
-    display: none !important;
-}
-
-footer {
-    display: none !important;
+    /*display: none !important;*/
+    visibility: hidden !important;
 }
