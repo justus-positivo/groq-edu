@@ -5,6 +5,12 @@ from groq import Groq
 st.set_page_config(page_icon="🥷", layout="wide",
                    page_title="GROQ.EDU Demo")
 
+# CSS para estilizar o chat
+with open('./css/main.css') as f:
+    css = f.read()
+
+# Adiciona o CSS ao app
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
