@@ -9,5 +9,5 @@ header div:nth-child(2) :nth-child(1){
 }
 
 #MainMenu {
-    visibility: visible !important;
+    visibility: hidden !important;
 }

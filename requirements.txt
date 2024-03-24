@@ -1,2 +1,4 @@
 groq
 streamlit
+openai
+langchain

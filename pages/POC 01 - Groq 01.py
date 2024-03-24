@@ -1,37 +1,25 @@
 import streamlit as st
 from typing import Generator
 from groq import Groq
+import utils.util as util
 
-st.set_page_config(page_icon="🥷", layout="wide",
-                   page_title="GROQ.EDU Demo")
+st.set_page_config(
+    page_icon="🥷", 
+    layout="wide",
+    page_title="GROQ.EDU POC 01")
 
-# CSS para estilizar o chat
-with open('./css/main.css') as f:
-    css = f.read()
+# Adiciona CSS ao app
+util.css()
 
-# Adiciona o CSS ao app
-st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+# Adiciona imagem de bem vindo ao app
+st.subheader("GROQ.EDU Demo - v1", divider="rainbow", anchor=False)
 
-# Função para adicionar emoji inicial
-def icon(emoji: str):
-    """Shows an emoji as a Notion-style page icon."""
-    st.write(
-        f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
-        unsafe_allow_html=True,
-    )
-
-
-icon("🥷")
-
-st.subheader("GROQ.EDU Demo", divider="rainbow", anchor=False)
-
-client = Groq(
-    api_key=st.secrets["GROQ_API_KEY"],
-)
+# Inicializa o cliente Groq
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 # Initialize chat history and selected model 2
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = [{"role": "assistant", "content": "Como posso ajudar?"}]
 
 if "selected_model" not in st.session_state:
     st.session_state.selected_model = None
@@ -75,10 +63,9 @@ with col2:
 
 # Exibir mensagens do chat 
 for message in st.session_state.messages:
-    avatar = '🤖' if message["role"] == "assistant" else '👨‍💻'
+    avatar = './images/edu 01.png' if message["role"] == "assistant" else '👨‍💻'
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
-
 
 def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
     """Conteúdo da resposta do chat"""
@@ -108,7 +95,7 @@ if prompt := st.chat_input("Digite seu prompt aqui..."):
             stream=True
         )
 
-        with st.chat_message("assistant", avatar="🤖"):
+        with st.chat_message("assistant", avatar="./images/edu 01.png"):
             chat_responses_generator = generate_chat_responses(chat_completion)
             full_response = st.write_stream(chat_responses_generator)
     except Exception as e:
