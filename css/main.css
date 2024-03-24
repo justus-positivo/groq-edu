@@ -1,15 +1,11 @@
-header{
+/* header{
     display: none !important;
-}
+} */
 
 #MainMenu {
     display: none !important;
 }
 
 footer {
-    display: none !important;
-}
-
-a[class^='viewerBadge_container'], a[class*='viewerBadge_container']{
     display: none !important;
 }
