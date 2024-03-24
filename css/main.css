@@ -9,3 +9,7 @@ header{
 footer {
     display: none !important;
 }
+
+a[class^="viewerBadge_container"]{
+    display: none !important;
+}
