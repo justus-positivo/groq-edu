@@ -2,7 +2,8 @@
     display: none !important;
 } */
 
-header div:nth-child(2){
+/* remover botões do github */
+header div:nth-child(2):nth-child(1){
     display: none !important;
 }
 
