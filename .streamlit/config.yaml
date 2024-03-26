@@ -1,0 +1,16 @@
+credentials:
+  usernames:
+    justus:
+      email: justus@positivo.com.br
+      name: Christiano Justus
+      password: $2b$12$NFF3P7tEhSa6GQyUG20ndO.T1KNYhAn/kaxonuRfvDTGEFH0wUIDq
+    demo:
+      email: demo@demo.com.br
+      name: Usuário Demo
+      password: $2b$12$45LpzyxHLet3uyERe8L7pOBsvCjRa6L8aJWrgb/EOm.fNKotNrMyS
+cookie:
+  expiry_days: 30
+  key: WHBBaSpcYHEw
+  name: eduia_axMggK
+preauthorized:
+  emails:

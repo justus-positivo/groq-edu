@@ -7,8 +7,8 @@ st.set_page_config(
     layout="wide",
     page_title="OPENAI.EDU POC 01")
 
-# Adiciona CSS ao app
-util.css()
+# Inicializa Page
+util.init_page()
 
 # Adiciona imagem de bem vindo ao app
 st.subheader("OPENAI.EDU Demo - v1", divider="rainbow", anchor=False)
@@ -43,7 +43,7 @@ if st.session_state.selected_model != model_option:
 
 # Exibir mensagens do chat 
 for message in st.session_state.messages:
-    avatar = './images/edu 01.png' if message["role"] == "assistant" else '👨‍💻'
+    avatar = './images/edu.webp' if message["role"] == "assistant" else '👨‍💻'
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
 

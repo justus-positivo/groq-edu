@@ -2,8 +2,8 @@ import streamlit.components.v1 as components
 import streamlit as st
 import utils.util as util
 
-# Adiciona CSS ao app
-util.css()
+# Inicializa Page
+util.init_page()
 
 st.title("Resultados")
 st.write("Aqui você encontra alguns resultados das POCs até agora")

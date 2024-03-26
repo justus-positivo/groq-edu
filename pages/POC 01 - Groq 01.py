@@ -8,8 +8,8 @@ st.set_page_config(
     layout="wide",
     page_title="GROQ.EDU POC 01")
 
-# Adiciona CSS ao app
-util.css()
+# Inicializa página
+util.init_page()
 
 # Adiciona imagem de bem vindo ao app
 st.subheader("GROQ.EDU Demo - v1", divider="rainbow", anchor=False)
@@ -63,7 +63,7 @@ with col2:
 
 # Exibir mensagens do chat 
 for message in st.session_state.messages:
-    avatar = './images/edu 01.png' if message["role"] == "assistant" else '👨‍💻'
+    avatar = './images/edu.webp' if message["role"] == "assistant" else '👨‍💻'
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
 
@@ -95,7 +95,7 @@ if prompt := st.chat_input("Digite seu prompt aqui..."):
             stream=True
         )
 
-        with st.chat_message("assistant", avatar="./images/edu 01.png"):
+        with st.chat_message("assistant", avatar="./images/edu.webp"):
             chat_responses_generator = generate_chat_responses(chat_completion)
             full_response = st.write_stream(chat_responses_generator)
     except Exception as e:
