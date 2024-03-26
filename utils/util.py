@@ -5,7 +5,7 @@ def css():
     with open('./css/main.css') as f:
         css = f.read()
     # Adiciona o CSS ao app
-    #st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+    st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 # Função para adicionar emoji inicial
 def icon(emoji: str):
