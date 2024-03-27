@@ -12,7 +12,7 @@ st.set_page_config(
     page_title="EDU.IA")
 
 # Inicializa página
-util.init_page(False)
+# util.init_page(False)
 
 
 with open('./.streamlit/config.yaml', 'r') as file:
