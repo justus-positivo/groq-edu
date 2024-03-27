@@ -3,3 +3,4 @@ streamlit
 openai
 langchain
 streamlit-authenticator
+haystack-ai

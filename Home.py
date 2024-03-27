@@ -4,12 +4,16 @@ import yaml
 import time
 import utils.util as util
 
+from yaml.loader import SafeLoader
+
 st.set_page_config(
     page_icon="🤖", 
     layout="wide",
     page_title="EDU.IA")
 
-from yaml.loader import SafeLoader
+# Inicializa página
+util.init_page(False)
+
 
 with open('./.streamlit/config.yaml', 'r') as file:
     config = yaml.load(file, Loader=SafeLoader)
@@ -61,6 +65,7 @@ def authenticated_menu():
     st.sidebar.page_link("./pages/POC 03 - Gemini 01.py", label="POC 03 - Gemini 01")
     st.sidebar.page_link("./pages/POC 04 - AWS Bedrock.py", label="POC 04 - AWS Bedrock")
     st.sidebar.page_link("./pages/POC 05 - Groq 02 - RAG.py", label="POC 05 - Groq 02 - RAG")
+    st.sidebar.page_link("./pages/POC 06 - Haystack.py", label="POC 06 - Haystack")
     # st.sidebar.page_link("pages/user.py", label="Your profile")
     # if st.session_state.role in ["admin", "super-admin"]:
     #     st.sidebar.page_link("pages/admin.py", label="Manage users")
