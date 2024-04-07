@@ -4,7 +4,7 @@ openai
 langchain
 streamlit-authenticator
 haystack-ai
-pinecone
+pinecone==3.2.2
 sentence_transformers
 torch
 googletrans
