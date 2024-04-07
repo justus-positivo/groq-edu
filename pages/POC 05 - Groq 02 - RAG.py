@@ -5,7 +5,6 @@ import utils.util as util
 from pinecone import Pinecone
 from sentence_transformers import SentenceTransformer
 import torch
-from googletrans import Translator
 
 st.set_page_config(
     page_icon="🥷", 
@@ -82,14 +81,9 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
         if chunk.choices[0].delta.content:
             yield chunk.choices[0].delta.content
 
-def translate_text(text):
-    translator = Translator()
-    translation = translator.translate(text, dest='en')
-    return translation.text
-
 if prompt := st.chat_input("Digite seu prompt aqui..."):
-    # monta prompt do usuário passado sempre para o inglês
-    query = translate_text(prompt)
+    # monta prompt do usuário passado sempre para o inglês TODO: traduzir para inglês
+    query = prompt
     # create the query vector
     xq = model.encode(query).tolist()
     # now query
