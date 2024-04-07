@@ -4,3 +4,7 @@ openai
 langchain
 streamlit-authenticator
 haystack-ai
+pinecone
+sentence_transformers
+torch
+googletrans
