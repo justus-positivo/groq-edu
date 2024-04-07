@@ -7,4 +7,3 @@ haystack-ai
 pinecone-client
 sentence_transformers
 torch
-googletrans

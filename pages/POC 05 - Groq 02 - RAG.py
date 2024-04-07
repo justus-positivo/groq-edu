@@ -6,6 +6,7 @@ from pinecone import Pinecone
 from sentence_transformers import SentenceTransformer
 import torch
 
+
 st.set_page_config(
     page_icon="🥷", 
     layout="wide",
@@ -89,7 +90,7 @@ if prompt := st.chat_input("Digite seu prompt aqui..."):
     # now query
     result = pinecone_index.query(vector=xq, top_k=5, include_values=False, include_metadata=True)
     for r in result['matches']:
-        print(f"{round(r['score'], 2)}: {r['metadata']['text']}")    
+        st.text(f"{round(r['score'], 2)}: {r['metadata']['text']}")    
     # monta prompt do sistema
     matched_info = ' '.join(item['metadata']['text'] for item in result['matches'])
     context = f"Information: {matched_info}"
